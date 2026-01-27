@@ -1,16 +1,50 @@
-# React + Vite
+# ⚛️ First React App with Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder contains my **first React.js project** created using **Vite** while learning from the  
+**"Chai aur React"** series by **CodeWithChai**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 What I Did
 
-## React Compiler
+- Installed React using Vite
+- Understood project folder structure
+- Ran the development server
+- Printed my first message: **"Chai aur React with Vite"**
+- Learned difference between Create React App and Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Concepts Learned
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Why Vite is faster than Create React App
+- React project initialization
+- `src` folder structure
+- `App.jsx` and `main.jsx` roles
+- Running React dev server
+
+---
+
+## 🛠 Tech Used
+
+- React.js
+- Vite
+- JavaScript (ES6)
+
+---
+
+## 📅 Learning Source
+
+**Course:** Chai aur React  
+**Platform:** YouTube
+
+---
+
+## 💡 Author
+
+**Hardeep Singh**  
+BCA Student | Aspiring Software Engineer | MERN Stack Learner
+
+---
+
+⭐ If you find this repository helpful, feel free to star it!
