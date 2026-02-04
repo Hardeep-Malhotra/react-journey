@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 React + Tailwind CSS Cards Project
 
 This project is a beginner-friendly React application where I learned and implemented **Tailwind CSS setup** and **React props** by building reusable card components.
@@ -114,3 +115,6 @@ If you like this project, please give it a star ⭐ on GitHub!
 👤 Author
 Hardeep Singh
 💻 Software Engineer | MERN Stack Developer | Backend Devloper
+=======
+REACR_JOURNEY
+>>>>>>> ba6925d46378e1c6d3be155d328568923b038d68
