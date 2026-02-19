@@ -6,7 +6,7 @@ import Counter from './useState/Counter'
 import Toggle from './useState/Toggle'
 import MyContextProvider from './useContext/MyContextProvider'
 import { Authentication, Login } from "./useContext/Authentication";
-
+import UseEffectHook from './useEffect/useEffectHook'
 
 
 function App() {
@@ -19,9 +19,12 @@ function App() {
 
    {/* concept of React Hooks by using useContext
     <MyContextProvider/> */}
-    <Authentication>
+    {/* <Authentication>
       <Login />
-    </Authentication>
+    </Authentication> */}
+
+    {/* concept of React Hooks by using useEffect */}
+    <UseEffectHook/>
     </>
     
   )
