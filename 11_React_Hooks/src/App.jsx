@@ -5,6 +5,10 @@ import './App.css'
 import Counter from './useState/Counter'
 import Toggle from './useState/Toggle'
 import MyContextProvider from './useContext/MyContextProvider'
+import { Authentication, Login } from "./useContext/Authentication";
+
+
+
 function App() {
   
   return(
@@ -15,7 +19,11 @@ function App() {
 
    {/* concept of React Hooks by using useContext
     <MyContextProvider/> */}
+    <Authentication>
+      <Login />
+    </Authentication>
     </>
+    
   )
 }
 
