@@ -1,0 +1,131 @@
+/* Container jo cards ko hold karega */
+.parent {
+  min-height: 100vh;
+  background: #61a0e0;
+  /* Light background jaisa image mein hai */
+  padding: 40px;
+
+  /* Grid settings for 4 columns */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* upar wali line automatically 1 row mein 4 cards adjust karegi 
+     agar screen choti hui toh auto niche shift kar degi */
+  gap: 24px;
+}
+
+/* Card Styling based on your Image */
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  height: 40vh;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header: Logo and Saved Button */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.company-logo-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.company-logo-circle img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.saved-tag {
+  background: #f1f1f1;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Job Details */
+.job-meta {
+  font-size: 14px;
+  color: #666;
+}
+
+.job-meta strong {
+  color: #000;
+  margin-right: 8px;
+}
+
+.job-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 5px 0;
+}
+
+/* Pills/Tags */
+.tag-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pill {
+  background: #ececec;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Footer Section */
+.card-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.salary-loc h4 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.salary-loc p {
+  font-size: 13px;
+  color: #888;
+}
+
+.apply-now-btn {
+  background: #000;
+  /* Pure black button as per image */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
