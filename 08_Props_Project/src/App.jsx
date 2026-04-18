@@ -2,6 +2,7 @@ import React from "react";
 
 import "./index.css";
 import Card from "./components/Card";
+import ProductPage from "./ProductPage";
 
 export default function App() {
   const jobs = [
@@ -94,11 +95,15 @@ export default function App() {
       img: "https://tse2.mm.bing.net/th/id/OIP.nDdw9cc1ll-HMlptuvsSPwHaHa?w=148&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
     },
   ];
+
+  console.log(jobs);
+
   return (
     <div className="parent">
-      {jobs.map((job) => (
+      {/* {jobs.map((job) => (
         <Card key={job.id} job={job} />
-      ))}
+      ))} */}
+      <ProductPage />
     </div>
   );
 }
