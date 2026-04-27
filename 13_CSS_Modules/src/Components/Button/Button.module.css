@@ -1,0 +1,11 @@
+.btn {
+    align-items: center;
+    background-color: skyblue;
+    padding: 10px 20px;
+    border: 2px solid midnightblue;
+    border-radius: 2rem;
+    width: 10%;
+    text-align: center;
+    margin: auto;
+    margin-top: 300px;
+}

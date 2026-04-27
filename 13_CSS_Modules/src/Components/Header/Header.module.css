@@ -1,0 +1,19 @@
+.ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px 20px;
+    border: 2px solid midnightblue;
+    border-radius: 2rem;
+    background-color: skyblue;
+}
+
+.a {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px 20px;
+    border: 2px solid rgb(94, 94, 204);
+    border-radius: 2rem;
+    background-color: rgb(61, 74, 79);
+}
