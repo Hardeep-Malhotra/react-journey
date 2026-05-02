@@ -4,7 +4,7 @@ import { RightPageContent } from "./RightPageContent";
 
 export const Page1Content = () => {
   return (
-    <div className="  py-10 flex justify-between h-[90vh]  bg-amber-800">
+    <div className="  py-10 flex gap-10 h-[90vh]">
       <LeftPageContent />
       <RightPageContent />
     </div>
