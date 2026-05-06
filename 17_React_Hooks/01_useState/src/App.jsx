@@ -5,6 +5,7 @@ import { Checkbox } from "./Basic useState examples/Checkbox";
 import Form from "./Basic useState examples/Form";
 import { Passing_the_updater_function } from "./The difference between passing an updater and passing the next state directly/Passing_the_updater_function";
 import { Passing_the_next_state_directly } from "./The difference between passing an updater and passing the next state directly/Passing_the_next_state_directly";
+import { Form_Object } from "./Examples of objects and arrays in state/Form_Object";
 
 export const App = () => {
   return (
@@ -21,6 +22,9 @@ export const App = () => {
       </h1>
       <Passing_the_updater_function />
       <Passing_the_next_state_directly />
+
+      <h1>Examples of objects and arrays in state</h1>
+      <Form_Object />
     </div>
   );
 };
