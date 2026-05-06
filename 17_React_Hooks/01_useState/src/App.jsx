@@ -6,6 +6,7 @@ import Form from "./Basic useState examples/Form";
 import { Passing_the_updater_function } from "./The difference between passing an updater and passing the next state directly/Passing_the_updater_function";
 import { Passing_the_next_state_directly } from "./The difference between passing an updater and passing the next state directly/Passing_the_next_state_directly";
 import { Form_Object } from "./Examples of objects and arrays in state/Form_Object";
+import { Form_Nested_Object } from "./Examples of objects and arrays in state/Form_Nested_Object";
 
 export const App = () => {
   return (
@@ -25,6 +26,7 @@ export const App = () => {
 
       <h1>Examples of objects and arrays in state</h1>
       <Form_Object />
+      <Form_Nested_Object />
     </div>
   );
 };
