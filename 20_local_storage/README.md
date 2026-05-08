@@ -1,16 +1,43 @@
-# React + Vite
+# 🚀 Web Storage Lab (LocalStorage vs SessionStorage)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application to demonstrate and learn the practical implementation of **Web Storage APIs** (`localStorage` and `sessionStorage`). This project helps developers understand how data persistence works in the browser.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Features
 
-## React Compiler
+- **LocalStorage Implementation**: Learn how to store data permanently in the browser.
+- **SessionStorage Implementation**: Understand temporary data storage (valid until the tab is closed).
+- **CRUD Operations**: Practical examples of:
+  - `setItem()`: Saving data.
+  - `getItem()`: Retrieving data.
+  - `removeItem()`: Deleting a specific key.
+  - `clear()`: Wiping all data from storage.
+- **Real-time UI**: Instant feedback on the screen when storage values change.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📚 Concepts Covered
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. LocalStorage
+
+- **Persistence**: Data remains even after the browser is closed and reopened.
+- **Capacity**: ~5MB - 10MB.
+- **Method Used**: `localStorage.setItem('key', 'value')`.
+
+### 2. SessionStorage
+
+- **Persistence**: Data is cleared as soon as the specific page session ends (tab closed).
+- **Capacity**: ~5MB.
+- **Method Used**: `sessionStorage.setItem('key', 'value')`.
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/your-username/web-storage-lab.git](https://github.com/your-username/web-storage-lab.git)
+   ```
