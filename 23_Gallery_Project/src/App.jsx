@@ -4,8 +4,10 @@ import axios from "axios";
 export const App = () => {
   const [userData, setUserData] = React.useState([]);
   const [page, setPage] = React.useState(1);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const getData = async () => {
+    setIsLoading(true);
     try {
       const respond = await axios.get(
         `https://picsum.photos/v2/list?page=${page}&limit=15`,
@@ -14,6 +16,10 @@ export const App = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.log(error);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
     }
   };
 
@@ -70,10 +76,19 @@ export const App = () => {
         </button>
       </div>
 
-      {/* Responsive Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-        {displayContent}
-      </div>
+      {isLoading ? (
+        <div className="flex flex-col items-center justify-center h-64">
+          {/* Mast Tailwind Spinner */}
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-green-500 mb-4"></div>
+          <p className="text-green-500 font-medium animate-pulse">
+            Fetching awesome photos...
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+          {displayContent}
+        </div>
+      )}
 
       {/* <div>
         <button
@@ -96,28 +111,30 @@ export const App = () => {
         </button>
       </div> */}
 
-      <div className="flex justify-center items-center gap-6 mt-12 mb-10">
-        <button
-          disabled={page === 1} // Page 1 pe 'Back' disable rahega
-          className="bg-gray-700 px-6 py-2 rounded-lg disabled:opacity-30 active:scale-90 transition-all"
-          onClick={() => {
-            if (page > 1) {
-              setPage(page - 1);
-            }
-          }}
-        >
-          {"< Previous"}
-        </button>
+      {!isLoading && (
+        <div className="flex justify-center items-center gap-6 mt-12 mb-10">
+          <button
+            disabled={page === 1} // Page 1 pe 'Back' disable rahega
+            className="bg-gray-700 px-6 py-2 rounded-lg disabled:opacity-30 active:scale-90 transition-all"
+            onClick={() => {
+              if (page > 1) {
+                setPage(page - 1);
+              }
+            }}
+          >
+            {"< Previous"}
+          </button>
 
-        <span className="text-xl font-bold text-green-500">Page {page}</span>
+          <span className="text-xl font-bold text-green-500">Page {page}</span>
 
-        <button
-          className="bg-green-600 px-6 py-2 rounded-lg active:scale-90 transition-all"
-          onClick={() => setPage(page + 1)}
-        >
-          {"Next >"}
-        </button>
-      </div>
+          <button
+            className="bg-green-600 px-6 py-2 rounded-lg active:scale-90 transition-all"
+            onClick={() => setPage(page + 1)}
+          >
+            {"Next >"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
