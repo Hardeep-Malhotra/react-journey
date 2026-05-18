@@ -1,9 +1,15 @@
 import React from "react";
+import Login from "./Components/Login";
+import Profile from "./Components/Profil";
+import UserContextProvider from "./Context/UserContextProvider";
 
 function App() {
   return (
     <div>
-      <h1>Learn Context API</h1>
+      <UserContextProvider>
+        <Login />
+        <Profile />
+      </UserContextProvider>
     </div>
   );
 }
