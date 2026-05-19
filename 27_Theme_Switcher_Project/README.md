@@ -1,16 +1,73 @@
-# React + Vite
+# 🌓 React Theme Switcher (Tailwind CSS v4)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and modern **Dark/Light Mode Switcher** built with **React**, **Context API**, and the latest **Tailwind CSS v4**. This project demonstrates how to manage global state and sync it with the browser's DOM for a seamless user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Dynamic Theme Switching:** Toggle between Dark and Light modes instantly.
+- **Context API:** Efficient state management without prop drilling.
+- **Tailwind CSS v4:** Leverages the latest CSS-based configuration for dark mode variants.
+- **Persistent Logic:** Uses `useEffect` to sync the theme with the `<html>` element.
+- **Fully Responsive:** Beautifully designed product card that adapts to all screen sizes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** React (Vite)
+- **Styling:** Tailwind CSS v4
+- **State Management:** React Context API
+- **Icons/Images:** Lucide/Pexels
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone [https://github.com/Hardeep-Malhotra.react-journey.git](https://github.com/Hardeep-Malhotra.react-journey.git)
+cd your-repo-name
+```
+
+---
+
+### 2. Install dependencies
+
+```js
+npm install
+```
+
+---
+
+### 3. Tailwind v4 Setup (Important)
+
+Ensure your src/index.css includes the dark mode variant for v4:
+
+```CSS
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+```
+
+---
+
+### 4. Run the development server
+
+```Bash
+npm run dev
+```
+
+---
+
+### **💡 How It Works**
+
+**Context Creation: We define a ThemeContext with themeMode, lightMode(), and darkMode().**
+
+**Provider: The App.js wraps the application in ThemeProvider and passes the state.**
+
+**The Switch: The ThemeBtn component triggers the functions from context.**
+
+**DOM Sync: A useEffect in App.js monitors themeMode and adds/removes the .dark class from the <html> tag.**
