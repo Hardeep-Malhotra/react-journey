@@ -1,16 +1,68 @@
-# React + Vite
+# **📝 Redux Toolkit Todo App**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A streamlined and efficient Todo Application built with React and Vite, utilizing Redux Toolkit for robust state management. This project demonstrates core CRUD operations (Create, Read, Delete) within a centralized data flow.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **🚀 Features**
 
-## React Compiler
+Add Tasks: Instantly add new tasks to your list with unique IDs.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+`Remove Tasks:` Seamlessly delete completed or unwanted tasks.
 
-## Expanding the ESLint configuration
+`Centralized State:` Managed via Redux Toolkit to ensure data consistency across components.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`Responsive UI:` Styled with Tailwind CSS for a modern, mobile-friendly, dark-themed interface.
+
+---
+
+### 🛠️ Tech Stack
+
+---
+
+`Frontend: React.js (Vite)`
+
+`State Management: Redux Toolkit (RTK)`
+
+`Styling: Tailwind CSS`
+
+`Icons: Heroicons / Inline SVG`
+
+---
+
+### 📦 Installation & Setup
+
+---
+
+Clone the project:
+
+```Bash
+git clone <your-repository-link>
+cd <project-folder-name>
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+Run the development server:
+npm run dev
+```
+
+4. **Build for production:**
+
+```bash
+  npm run build
+```
+
+---
+
+### **🧠 Key Learnings**
+
+Store Configuration: Setting up the global store using configureStore.
+
+Slices & Reducers: Utilizing createSlice to manage state logic and auto-generate action creators.
+
+Hooks Integration: Implementing useSelector to read state and useDispatch to trigger updates.
+
+Tailwind Integration: Configuring Utility-first CSS in a React/Vite environment.
