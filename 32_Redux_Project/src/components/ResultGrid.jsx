@@ -20,56 +20,79 @@ const ResultGrid = () => {
         dispatch(setLoading(true));
         let data = [];
 
-        // Case 1 : PHOTOS
+        // === CASE 1: PHOTOS ===
         if (activeTab === "photos") {
-          let responseArr = await fetchPhotos(query);
-          if (Array.isArray(responseArr)) {
-            data = responseArr.map((item) => ({
-              id: item.id,
-              type: "photo",
-              title: item.alt_description || "Beautiful Image",
-              thumbnail: item.urls.small,
-              src: item.urls.full,
-              url: item.links.html,
-            }));
+          let responseObj = await fetchPhotos(query); // Isko Object bolo kyunki isme .results hai
+
+          // Unsplash ka data responseObj.results mein hota hai
+          const actualArray = responseObj?.results || responseObj;
+
+          if (Array.isArray(actualArray)) {
+            data = actualArray.map((item) => {
+              return {
+                id: item.id,
+                type: "photo",
+                title: item.alt_description || "Beautiful Image",
+                thumbnail: item.urls?.small || item.urls?.regular || "",
+                src: item.urls?.full || item.urls?.regular || "",
+                url: item.links?.html || "#",
+              };
+            });
           }
         }
 
-        // CASE 2 : VIDEOS
+        // === CASE 2: VIDEOS ===
         else if (activeTab === "videos") {
-          let responseArr = await fetchVideos(query);
-          if (Array.isArray(responseArr)) {
-            data = responseArr.map((item) => ({
-              id: item.id,
-              type: "video",
-              title: item.user?.name
-                ? `Video by ${item.user.name}`
-                : `Premium Video`,
-              thumbnail: item.image,
-              src: item.video_files?.[0]?.link || "",
-              url: item.url,
-            }));
+          let responseObj = await fetchVideos(query);
+
+          // Pexels ka data responseObj.videos mein hota hai
+          const actualArray = responseObj?.videos || responseObj;
+
+          if (Array.isArray(actualArray)) {
+            data = actualArray.map((item) => {
+              return {
+                id: item.id,
+                type: "video",
+                title: item.user?.name
+                  ? `Video by ${item.user.name}`
+                  : `Premium Video`,
+                thumbnail: item.image,
+                src: item.video_files?.[0]?.link || "",
+                url: item.url,
+              };
+            });
           }
         }
 
-        // CASE 3 : GIFs
-        else if (activeTab === "gif") {
-          let responseArr = await fetchGIPHY(query);
-          const giphyItems = responseArr || [];
+        // === CASE 3: GIFs ===
+        else if (
+          activeTab === "gif" ||
+          activeTab === "gifs" ||
+          activeTab === "GIFS"
+        ) {
+          let responseObj = await fetchGIPHY(query);
 
-          data = giphyItems.map((item) => ({
-            id: item.id,
-            type: "gif",
-            title: item.title || "Trending GIF",
-            thumbnail:
-              item.images?.fixed_width?.url ||
-              item.images?.fixed_width_small?.url,
-            src: item.images?.original?.url,
-            url: item.url,
-          }));
+          // GIPHY ka data responseObj.data mein hota hai
+          const actualArray = responseObj?.data || responseObj;
+
+          if (Array.isArray(actualArray)) {
+            data = actualArray.map((item) => {
+              return {
+                id: item.id,
+                type: "gif",
+                title: item.title || "Trending GIF",
+                thumbnail:
+                  item.images?.fixed_width?.url ||
+                  item.images?.fixed_width_small?.url ||
+                  "",
+                src: item.images?.original?.url || "",
+                url: item.url,
+              };
+            });
+          }
         }
 
-        console.log("Clean Standard Data to Redux: ", data);
+        console.log("Clean Standard Data to Redux final state: ", data);
         dispatch(setResults(data));
       } catch (err) {
         console.error("Oops! API fail ho gayi: ", err.message);
