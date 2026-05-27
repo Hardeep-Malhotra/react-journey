@@ -18,7 +18,7 @@ export async function fetchPhotos(query, page = 1, per_page = 15) {
     });
 
     console.log("Unsplash Photos Data : ", response.data.results);
-    return response.data.results;
+    return response.data;
   } catch (error) {
     if (error.response) {
       console.error("Unsplash Error Status:", error.response.status);
@@ -46,7 +46,7 @@ export async function fetchVideos(query = "nature", page = 1, per_page = 13) {
       },
     );
     console.log("Pexels Videos Data:", response.data.videos);
-    return response.data.videos;
+    return response.data;
   } catch (error) {
     if (error.response) {
       console.log("Pexels Error Status : ", error.response.status);
@@ -65,7 +65,7 @@ export async function fetchGIPHY() {
       },
     });
     console.log("GIPHY Data:", response.data.data);
-    return response.data.data;
+    return response.data;
   } catch (error) {
     if (error.response) {
       console.log("GIPHY Error Status : ", error.response.status);
