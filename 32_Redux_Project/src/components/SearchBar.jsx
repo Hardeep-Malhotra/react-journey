@@ -1,33 +1,24 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setQuery, setActiveTab } from "../features/SearchSlice";
-// Tip: Install lucide-react if you haven't (npm i lucide-react)
-import { Search, Image, Video, Film } from "lucide-react";
+import { setQuery } from "../features/SearchSlice";
+import { Search } from "lucide-react";
 
 const SearchBar = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
 
-  // Redux se activeTab nikal rahe hain taaki UI active state dikha sake
+  // Redux se activeTab le rahe hain sirf input placeholder dynamic rakhne ke liye
   const { activeTab } = useSelector((state) => state.search);
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (text.trim()) {
       dispatch(setQuery(text.trim()));
-      // Professional search engines par query search ke baad input se ghaib nahi hoti,
-      // isliye setText("") hata diya hai taaki user ko search term dikhti rahe.
     }
   };
 
-  const tabs = [
-    { id: "photos", label: "Photos", icon: Image },
-    { id: "videos", label: "Videos", icon: Video },
-    { id: "gifs", label: "GIFs", icon: Film },
-  ];
-
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-12 flex flex-col items-center gap-8">
+    <div className="w-full max-w-4xl mx-auto px-4 pt-12 flex flex-col items-center gap-6">
       {/* Project Branding */}
       <div className="text-center">
         <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent sm:text-5xl">
@@ -51,7 +42,7 @@ const SearchBar = () => {
             required
             className="w-full bg-transparent py-3 text-lg text-gray-800 placeholder-gray-400 outline-none"
             type="text"
-            placeholder={`Search premium ${activeTab}...`}
+            placeholder={`Search premium ${activeTab || "media"}...`}
           />
         </div>
 
@@ -59,29 +50,6 @@ const SearchBar = () => {
           Search
         </button>
       </form>
-
-      {/* Media Type Tabs */}
-      <div className="flex bg-gray-100 p-1.5 rounded-xl border border-gray-200/50">
-        {tabs.map((tab) => {
-          const IconComponent = tab.icon;
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => dispatch(setActiveTab(tab.id))}
-              className={`flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all ${
-                isActive
-                  ? "bg-white text-indigo-600 shadow-sm"
-                  : "text-gray-500 hover:text-gray-900"
-              }`}
-            >
-              <IconComponent size={16} />
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
     </div>
   );
 };
