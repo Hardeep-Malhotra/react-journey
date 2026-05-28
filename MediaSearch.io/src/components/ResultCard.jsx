@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addCollection, addedToast } from "../features/collectionSlice";
+import { addCollection } from "../features/collectionSlice";
 import { BookmarkPlus } from "lucide-react";
 
 const ResultCard = ({ item }) => {
@@ -10,7 +10,6 @@ const ResultCard = ({ item }) => {
   const addToCollection = (mediaItem) => {
     if (!mediaItem) return;
     dispatch(addCollection(mediaItem));
-    dispatch(addedToast());
   };
 
   return (
