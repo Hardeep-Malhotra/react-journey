@@ -1,15 +1,16 @@
-import ResultCard from "./components/ResultCard";
-import ResultGrid from "./components/ResultGrid";
-import SearchBar from "./components/SearchBar";
-import Tabs from "./components/Tabs";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import CollectionPage from "./pages/CollectionPages";
 
 const App = () => {
   return (
-    <div>
-      <SearchBar />
-      <Tabs />
-      <ResultGrid />
-      <ResultCard />
+    <div className="min-h-screen bg-[#030405] selection:bg-emerald-500/30 selection:text-emerald-500">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/collection" element={<CollectionPage />} />
+      </Routes>
     </div>
   );
 };
