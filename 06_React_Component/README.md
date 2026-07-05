@@ -3,7 +3,7 @@
 ## 📖 What is a Component in React?
 
 A **component** in React is a reusable piece of UI (User Interface).  
-It helps you divide your website into small, independent, and reusable part's.
+It help's you divide your website into small, independent, and reusable part's.
 
 👉 Example:
 
