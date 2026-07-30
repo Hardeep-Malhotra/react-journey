@@ -1,4 +1,4 @@
-# 🚀 React Components Project
+# 🚀 React Component's Project
 
 ## 📖 What is a Component in React?
 
