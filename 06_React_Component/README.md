@@ -19,7 +19,7 @@ Instead of writing all code in one file, we create component,s and reuse them.
 
 ---
 
-## ⚛️ Types of Component"s
+## ⚛️ Types of Component
 
 ### 1. Functional Component ✅ (Used in this project)
 
