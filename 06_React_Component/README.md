@@ -39,7 +39,7 @@ class Navbar extends React.Component {
 }
 ```
 
-## 📌 Features of Components
+## 📌 Features of Component's
 
 🔹 Reusable
 🔹 Easy to manage
