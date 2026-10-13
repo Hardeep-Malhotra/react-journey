@@ -15,7 +15,7 @@ Instead of writing all code in one file, we create component,s and reuse them.
 
 📌 Simple Understanding:
 
-> Component = Function that returns UI (HTML + CSS)
+> Component = Function that return's UI (HTML + CSS)
 
 ---
 
