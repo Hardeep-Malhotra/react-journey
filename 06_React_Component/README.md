@@ -11,7 +11,7 @@ It helps you divide your website into small, independent, and reusable parts.
 - Card → Content display block
 - Footer → Bottom section of website
 
-Instead of writing all code in one file, we create component,s and reuse them.
+Instead of writing all code in one file, we create component"s and reuse them.
 
 📌 Simple Understanding:
 
